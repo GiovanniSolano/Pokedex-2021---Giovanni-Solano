@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-right">
+            <button mat-raised-button color="primary" routerLink="/catalogo" class="m-3">Regresar</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header text-center">
+            Información de contacto
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <mat-tab-group>
+                    <mat-tab label="Contacto">
+                        <mat-list>
+                            <div mat-subheader>Información personal</div>
+                            <mat-list-item>
+                                <mat-icon mat-list-icon>face</mat-icon>
+                                <div mat-line>Giovanni Solano Segura</div>
+                                <div mat-line> 7771349749 </div>
+                                <div mat-line> giovannisolano211@gmail.com </div>
+                                <div mat-line> 22 años </div>
+                            </mat-list-item>
+                            <mat-divider></mat-divider>
+                            <div mat-subheader>Redes - Contacto</div>
+                            <mat-list-item>
+                                <mat-icon mat-list-icon>travel_explore</mat-icon>
+                                <div mat-line>Facebook:
+                                    <a href="https://www.facebook.com/giovanni.solano.779">Giovanni Solano</a>
+                                </div>
+                                <div mat-line> Linkedin <a href="http://linkedin.com/in/giovanni-solano-segura-806b13199">Giovanni Solano</a> </div>
+                                <div mat-line> Github <a href="https://github.com/GiovanniSolano">Giovanni Solano</a> </div>
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-tab>
+                    <mat-tab label="Tecnologías">
+
+                        <mat-list>
+                            <div mat-subheader>Tecnologías</div>
+                            <mat-list-item>
+                                <mat-icon mat-list-icon><span class="material-icons-outlined">
+                                    construction
+                                    </span></mat-icon>
+                                <div mat-line>Activamente desarrollo front end con Angular</div>
+                                <div mat-line> stack MEAN </div>
+                                <div mat-line> CSS3 / HTML5 </div>
+                                <div mat-line> Angular Material </div>
+                                <div mat-line> Bootstrap / Flexbox </div>
+                            </mat-list-item>
+
+                        </mat-list>
+                    </mat-tab>
+                </mat-tab-group>
+                <footer class="blockquote-footer mt-5">Pokédex <cite title="Source Title">{{anio}}</cite></footer>
+            </blockquote>
+        </div>
+    </div>
+</div>

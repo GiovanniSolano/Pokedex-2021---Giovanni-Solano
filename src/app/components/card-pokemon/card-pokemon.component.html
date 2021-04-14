@@ -1,0 +1,19 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title class="titulo">{{pokemon.name}}</mat-card-title>
+        <mat-card-subtitle>{{pokemon.id}}<i class="fa fa-id-badge" aria-hidden="true"></i></mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="pokemon.detalles.sprites.front_default" [alt]="pokemon.name">
+    <mat-card-content>
+
+        <div class="row justify-content-center">
+            <div *ngFor="let tipo of pokemon.detalles.types">
+                <mat-chip-list aria-label="Tipos">
+                    <app-chips [tipo]="tipo"></app-chips>
+
+                </mat-chip-list>
+            </div>
+        </div>
+
+    </mat-card-content>
+</mat-card>

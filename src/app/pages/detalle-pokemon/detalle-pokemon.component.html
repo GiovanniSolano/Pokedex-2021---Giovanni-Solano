@@ -1,0 +1,38 @@
+<div class="jumbotron text-center hoverable p-4" *ngIf="!cargando">
+    <div class="row">
+        <div class="col-lg-12 text-right">
+            <button mat-raised-button color="primary" routerLink="/catalogo" class="m-3">Regresar</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 offset-md-1 mx-3 my-3">
+            <div class="view overlay waves-light">
+                <img [src]="pokemon.detalles.sprites.front_default || ''" *ngIf="pokemon.detalles.sprites.front_default" class="img-fluid img" [alt]="pokemon.name">
+                <a>
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+
+        </div>
+        <div class="col-md-7 text-md-left ml-3 mt-3">
+            <h1 class="h1 titulo mb-4">{{pokemon.name}} # {{pokemon.id}}</h1>
+
+            <div class="row ml-3 mb-4 chips">
+                <div *ngFor="let tipo of pokemon.detalles.types">
+                    <mat-chip-list aria-label="Tipos">
+                        <app-chips [tipo]="tipo"></app-chips>
+
+                    </mat-chip-list>
+                </div>
+            </div>
+
+            <h2 class="text-left">STATS</h2>
+
+            <div class="example-section" *ngFor="let stat of pokemon.detalles.stats">
+                <app-progress-bar [stat]="stat"></app-progress-bar>
+            </div>
+        </div>
+
+    </div>
+
+</div>

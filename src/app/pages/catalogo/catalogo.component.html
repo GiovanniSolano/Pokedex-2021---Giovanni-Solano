@@ -1,0 +1,37 @@
+<div class="container">
+
+    <div class="row mx-1 my-3">
+        <div class="col-lg-12">
+            <div class="example-button-row">
+                <mat-form-field class="container-form" [style.fontSize.px]="16">
+                    <mat-label>Buscar pokemon por nombre o id...</mat-label>
+                    <input matInput autocomplete="off" (change)="busquedaPokemones(termino.value)" #termino>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <div class="content mt-4 animate__animated animate__fadeIn" *ngIf="!(isLoading | async) && !cargandoTipos; else spinner">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let pokemon of pokemones">
+                <app-card-pokemon [pokemon]="pokemon" [routerLink]="['/detalle-pokemon', pokemon.id]"></app-card-pokemon>
+            </div>
+        </div>
+    </div>
+    <ng-template #spinner>
+
+        <div class="top" *ngIf="isLoading || cargando">
+
+            <app-spinner [mensaje]="'Cargando pokemones...'"></app-spinner>
+        </div>
+
+    </ng-template>
+
+
+    <div class="row m-3" *ngIf="!(isLoading | async) && !cargandoTipos">
+        <div class="col-lg-12 text-center">
+            <button mat-raised-button color="primary" [disabled]="hasta === 0 || desabilitar" (click)="cargar(-20)" type="submit" class="m-3">Anteriores</button>
+            <button mat-raised-button color="primary" [disabled]="hasta === totalRegistros || desabilitar" (click)="cargar(+20)" type="submit" class="m-3">Siguientes</button>
+        </div>
+    </div>
+</div>
